@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppRecord.ChatPage">
+  <StackLayout>
+    <StackLayout VerticalOptions="StartAndExpand">
+      <ListView ItemsSource="{Binding MessageList}" VerticalOptions="FillAndExpand">
+        <ListView.Header>
+          <Label Text="Mesajlarım" HorizontalOptions="Center"></Label>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <TextCell Text="{Binding UserName}" Detail="{Binding Text}" ></TextCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+    <StackLayout VerticalOptions="End">
+
+      <Entry x:Name="txtUserName" Placeholder="Kullanıcı Adı" ></Entry>
+      <Entry x:Name="txtUserMsg" Placeholder="Mesaj"></Entry>
+      <Button x:Name="btnSendMessage" Text="Gönder"></Button>
+    </StackLayout>
+  </StackLayout>
+</ContentPage>
